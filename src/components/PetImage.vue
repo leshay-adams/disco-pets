@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import httpClient from '../classes/httpClient'
+
 export default {
   props: ['animal'],
   data() {
@@ -17,31 +19,16 @@ export default {
   watch: {
     animal: {
       immediate: true,
-      handler(newVal, oldVal) {
-        if (newVal !== oldVal) {
-          this.fetchImage(newVal)
+      async handler(newVal) {
+        if (!newVal) return;
+        this.loading = true;
+        try {
+          this.imageUrl = await httpClient.getPetImage(newVal)
+        } catch (e) {
+          console.log('please try again'. e)
+        } finally {
+          this.loading = false;
         }
-      }
-    }
-  },
-  methods: {
-    async fetchImage(animal) {
-      this.loading = true
-      this.imgUrl = ''
-      try {
-        if (animal === 'cat') {
-          const res = await fetch('https://api.thecatapi.com/v1/images/search')
-          const data = await res.json()
-          this.imageUrl = data[0].url
-        } else if (animal === 'dog') {
-          const res = await fetch('https://dog.ceo/api/breeds/image/random')
-          const data = await res.json()
-          this.imageUrl = data.message
-        }
-      } catch (e) {
-        console.error('Error fetching image', e)
-      } finally {
-        this.loading = false
       }
     }
   }
