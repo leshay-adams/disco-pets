@@ -7,10 +7,17 @@
       <h3 class="text-sm sm:text-lg uppercase tracking-wide text-slate-500 animate-fadeIn">
         A Frontend Dev Showcase
       </h3>
+      <div class="absolute top-[-40px] right-0 p-4 text-3xl animate-float select-none">
+        {{ selectedAnimal === 'cat' ? '🐱‍👤' : '💫' }}
+      </div>
+      <div class="absolute top-10 left-30 p-4 text-3xl animate-float select-none">
+        {{ selectedAnimal === 'cat' ? '✨' : '🎉' }}
+      </div>
     </div>
-    <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-md mx-auto animate-fadeIn delay-200">
+    <p class="text-sm sm:text-lg text-slate-600 leading-relaxed max-w-md mx-auto animate-fadeIn delay-200">
       Pick your vibe – cat or dog – and we'll fetch a random pic to match your mood.
     </p>
+
     <PetPicker class="animate-fadeIn delay-400" v-model:chosenPet="selectedAnimal" />
     <PetImage class="mx-auto animate-bounceIn delay-600" :animal="selectedAnimal" />
   </div>

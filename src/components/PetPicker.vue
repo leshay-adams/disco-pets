@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center space-x-6">
+  <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:space-x-6">
     <button @click="updateChosenPet('cat')" :class="buttonClass('cat')">
       🐱 Cat
     </button>
@@ -25,6 +25,7 @@ export default {
       storage.set('selectedAnimal', animal)
     },
     buttonClass(animal) {
+      const base = 'w-40 sm:w-auto text-base sm:text-lg px-6 py-3 rounded-full font-semibold transition duration-300 ease-in-out shadow-md border-2 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2'
       const colors = {
         cat: 'bg-purple-400 text-white border-transparent',
         dog: 'bg-fuchsia-400 text-white border-transparent'
@@ -32,10 +33,7 @@ export default {
       const accent = animal === 'cat' ? 'border-purple-400 text-purple-400' : 'border-fuchsia-400 text-fuchsia-400'
       const isSelected = this.chosenPet === animal
 
-      return [
-        'px-8 py-3 rounded-full font-semibold transition duration-300 ease-in-out shadow-md border-2 transform',
-        isSelected ? colors[animal] + ' scale-110' : 'bg-transparent ' + accent + ' scale-100'
-      ]
+      return isSelected ? `${base} ${colors[animal]} scale-110` : `${base} bg-transparent ${accent} scale-100`
     }
   },
   created() {
