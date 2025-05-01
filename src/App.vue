@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-slate-100">
-    <DynamicShape color="petBlue" size="5" top="5%" left="10%" rotate="30" />
-    <DynamicShape color="petYellow" size="4" top="80%" left="80%" rotate="0" />
-    <DynamicShape color="petPurple" size="6" top="30%" left="75%" rotate="15" />
-    <div class="relative z-10 flex items-center justify-center p-4">
+  <div>
+    <DynamicShape color="brand-accent" :size="5" top="5%" left="10%" />
+    <DynamicShape color="brand-highlight" :size="4" top="80%" left="80%" />
+    <DynamicShape color="brand-primary" :size="6" top="30%" left="75%" />
+    <div class="h-screen relative z-10 flex items-center justify-center p-4">
       <Disco v-model:selectedAnimal="selectedAnimal" />
     </div>
   </div>
@@ -28,6 +28,6 @@ export default {
     if (saved) {
       this.selectedAnimal = saved
     }
-  }
+  },
 }
 </script>

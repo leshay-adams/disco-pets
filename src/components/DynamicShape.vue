@@ -7,9 +7,9 @@
     transform: `rotate(${rotate}deg)`,
     backgroundColor: resolveColor(color)
   }" :class="[
-      'absolute',
-      'rounded-full opacity-75 animate-float shadow-md'
-    ]"></div>
+    'absolute',
+    'rounded-full opacity-75 lg:opacity-90 animate-float shadow-md'
+  ]"></div>
 </template>
 
 <script>
@@ -24,10 +24,10 @@ export default {
   methods: {
     resolveColor(color) {
       const colors = {
-        petPink: '#f4a7c9',
-        petPurple: '#8a4fff',
-        petYellow: '#fff769',
-        petBlue: '#6dd4ff',
+        'brand-primary': '#8a4fff',
+        'brand-secondary': '#f4a7c9',
+        'brand-highlight': '#fff769',
+        'brand-accent': '#6dd4ff'
       }
 
       return colors[color] || color

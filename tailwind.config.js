@@ -6,10 +6,11 @@ module.exports = {
         sans: ['Outfit', 'sans-serif']
       },
       colors: {
-        petPink: '#f4a7c9',
-        petPurple: '#8a4fff',
-        petYellow: '#fff769',
-        petBlue: '#6dd4ff',
+        'brand-primary': '#8a4fff',
+        'brand-secondary': '#f4a7c9',
+        'brand-highlight': '#fff769',
+        'brand-accent': '#6dd4ff',
+        'brand-subtitle': '#E0FFFF'
       },
       keyframes: {
         float: {

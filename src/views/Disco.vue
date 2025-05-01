@@ -1,25 +1,35 @@
 <template>
-  <div class="text-slate-900 max-w-screen-sm w-full mx-auto px-6 py-10 text-center space-y-10">
-    <div class="space-y-3 relative">
-      <h1 class="text-4xl sm:text-6xl font-extrabold drop-shadow-lg animate-fadeIn leading-tight">
-        Disco Pets
-      </h1>
-      <h3 class="text-sm sm:text-lg uppercase tracking-wide text-slate-500 animate-fadeIn">
-        A Frontend Dev Showcase
-      </h3>
-      <div class="absolute top-[-40px] right-0 p-4 text-3xl animate-float select-none">
-        {{ selectedAnimal === 'cat' ? '🐱‍👤' : '💫' }}
+  <div
+    class="text-indigo-950 max-w-screen-sm w-full xl:space-x-24 mx-auto px-6 py-16 text-center xl:flex xl:flex-row xl:max-w-screen-lg xl:text-left xl:p-0">
+    <div class="mb-24 xl:mb-0">
+      <div class="relative xl:mr-10">
+        <h1 class="text-7xl/[0.8em] sm:text-9xl/[0.8em] font-extrabold drop-shadow-lg animate-fadeIn tracking-[-0.1em]">
+          Disco Pets
+        </h1>
+        <h3 class="text-[0.6rem] sm:text-md uppercase tracking-wide animate-fadeIn py-3 xl:ml-28">
+          A Frontend Dev Showcase
+        </h3>
+        <div class="absolute top-[-40px] right-0 p-4 text-3xl xl:text-6xl animate-float select-none">
+          {{ selectedAnimal === 'cat' ? '😻' : '💫' }}
+        </div>
+        <div class="absolute left-0 w-full mb-4 overflow-hidden h-12">
+          <div class="animate-slide whitespace-nowrap text-lg">
+            🐈 🐾 🐕
+          </div>
+        </div>
+        <p
+          class="base-text xl:text-xl text-brand-subtitle leading-relaxed max-w-md xl:max-w-xl mx-auto animate-fadeIn delay-200 pt-8 px-10 xl:px-0">
+          Pick your vibe – cat or dog – and we'll fetch a random pic to match your mood.
+        </p>
       </div>
-      <div class="absolute top-10 left-30 p-4 text-3xl animate-float select-none">
+      <PetPicker class="animate-fadeIn delay-400 p-8 xl:px-0" v-model:chosenPet="selectedAnimal" />
+      <div class="hidden sm:block absolute left-10 p-4 text-5xl animate-float select-none opacity-90">
         {{ selectedAnimal === 'cat' ? '✨' : '🎉' }}
       </div>
     </div>
-    <p class="text-sm sm:text-lg text-slate-600 leading-relaxed max-w-md mx-auto animate-fadeIn delay-200">
-      Pick your vibe – cat or dog – and we'll fetch a random pic to match your mood.
-    </p>
-
-    <PetPicker class="animate-fadeIn delay-400" v-model:chosenPet="selectedAnimal" />
-    <PetImage class="mx-auto animate-bounceIn delay-600" :animal="selectedAnimal" />
+    <div class="">
+      <PetImage class="mx-auto animate-bounceIn delay-600" :animal="selectedAnimal" />
+    </div>
   </div>
 </template>
 
