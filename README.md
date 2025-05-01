@@ -1,5 +1,15 @@
 # Social Places Frontend Assessment
 
+![1000340774](https://github.com/user-attachments/assets/34cc230c-ffba-41b8-97fe-bf36ce8d629a)
+
+
+![1000340775](https://github.com/user-attachments/assets/6472b862-4c65-4078-a0d4-bf80ea346c23)
+
+
+
+
+
+
 ## Introduction
 
 ### Welcome prospective developer.
