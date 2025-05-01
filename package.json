@@ -1,8 +1,7 @@
 {
   "name": "social-places-frontend-test",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,25 +9,15 @@
     "lint": "eslint . --ext .js,.vue"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.4",
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.2",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.25.1",
     "eslint-plugin-vue": "^10.0.1",
-    "tailwindcss": "^4.1.4",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.3",
     "vite": "^6.3.1"
-  },
-  "description": "We are Social Places; a local marketing software agency that provides listings, reputation, bookings and social interactions across multiple platforms and channels.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/leshay-adams/disco-pets.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/leshay-adams/disco-pets/issues"
-  },
-  "homepage": "https://github.com/leshay-adams/disco-pets#readme"
+  }
 }
